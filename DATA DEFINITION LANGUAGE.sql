@@ -2,9 +2,9 @@
 -- shifts table
 CREATE TABLE Shift (
     shift_id INT PRIMARY KEY NOT NULL,
-    date DATE NOT NULL,
-    start_time TIME NOT NULL,
-    end_time TIME NOT NULL
+    shift_date DATE NOT NULL,
+    start_time DATE NOT NULL,
+    end_time DATE NOT NULL
 );
 
 -- employee table
@@ -57,7 +57,7 @@ CREATE TABLE Sale (
     sale_id INT PRIMARY KEY NOT NULL,
     customer_id INT,
     employee_id INT,
-    sale_date DATETIME NOT NULL,
+    sale_date DATE NOT NULL,
     total DECIMAL(10, 2) NOT NULL,
     payment_method VARCHAR(50) NOT NULL,
     CONSTRAINT FK_sale_customer FOREIGN KEY (customer_id) REFERENCES Registered_Customer(customer_id),
@@ -65,7 +65,7 @@ CREATE TABLE Sale (
 );
 
 -- orders table
-CREATE TABLE Order (
+CREATE TABLE Customer_Order (
     sale_id INT,
     product_id INT,
     add_on_id INT,
@@ -98,7 +98,7 @@ CREATE TABLE Restock (
     employee_id INT,
     stock_id INT,
     supplier_id INT,
-    restock_date DATETIME NOT NULL,
+    restock_date DATE NOT NULL,
     PRIMARY KEY (employee_id, stock_id),
     CONSTRAINT FK_restock_employee FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
     CONSTRAINT FK_restock_stock FOREIGN KEY (stock_id) REFERENCES Stock(stock_id),
