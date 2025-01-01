@@ -63,30 +63,36 @@ VALUES (205, 'Mei Lin', '012-1234571', 'mei@gmail.com', TO_DATE('2024-12-05', 'Y
 
 --insert into product
 INSERT INTO Product (product_id, name, price) 
-VALUES (301, 'Coffee', 8.50);
+VALUES (301, 'Signature White Kopi', 8.50);
 
 INSERT INTO Product (product_id, name, price) 
-VALUES (302, 'Sandwich', 12.00);
+VALUES (302, 'Nutella Croissant', 10.00);
 
 INSERT INTO Product (product_id, name, price) 
-VALUES (303, 'Muffin', 5.00);
+VALUES (303, 'Caramel Latte', 11.00);
 
 INSERT INTO Product (product_id, name, price) 
-VALUES (304, 'Tea', 6.00);
+VALUES (304, 'Matcha Latte', 10.90);
 
 INSERT INTO Product (product_id, name, price) 
-VALUES (305, 'Juice', 7.50);
+VALUES (305, 'Royal Chocolate Frappe', 13.90);
+
+INSERT INTO Product (product_id, name, price)
+VALUES (306, 'Iced Shaken Peach Tea', 9.90);
 
 
 --insert into add-on table
 INSERT INTO Add_on (add_on_id, name, price) 
-VALUES (401, 'Extra Cheese', 2.00);
+VALUES (401, 'Shots', 2.00);
 
 INSERT INTO Add_on (add_on_id, name, price) 
-VALUES (402, 'Whipped Cream', 1.50);
+VALUES (402, 'Whipped Cream', 2.00);
 
 INSERT INTO Add_on (add_on_id, name, price) 
-VALUES (403, 'Ice', 0.50);
+VALUES (403, 'Vanilla', 2.50);
+
+INSERT into Add_on (add_on_id, name, price)
+VALUES (404, 'Gula Apong', 1.00);
 
 
 --insert into sale table
@@ -132,12 +138,11 @@ VALUES (702, 'Bakery Best', '03-12345678', 'bakerybest@gmail.com', 'Petaling Jay
 
 INSERT INTO Supplier (supplier_id, name, contact_no, email, location) 
 VALUES (703, 'Healthy Drinks', '03-87654321', 'healthydrinks@gmail.com', 'Shah Alam');
-COMMIT;
 
 
 --insert into stock table
 INSERT INTO Stock (stock_id, total_in_stock, expiry_date) 
-VALUES (801, 100, TO_DATE('2025-01-15', 'YYYY-MM-DD'));
+VALUES (801, 100, TO_DATE('2025-01-5', 'YYYY-MM-DD'));
 
 INSERT INTO Stock (stock_id, total_in_stock, expiry_date) 
 VALUES (802, 50, TO_DATE('2025-02-01', 'YYYY-MM-DD'));
@@ -146,11 +151,17 @@ INSERT INTO Stock (stock_id, total_in_stock, expiry_date)
 VALUES (803, 70, TO_DATE('2025-01-10', 'YYYY-MM-DD'));
 
 INSERT INTO Stock (stock_id, total_in_stock, expiry_date) 
-VALUES (804, 60, TO_DATE('2025-01-20', 'YYYY-MM-DD'));
+VALUES (804, 60, TO_DATE('2025-01-2', 'YYYY-MM-DD'));
 
 INSERT INTO Stock (stock_id, total_in_stock, expiry_date) 
 VALUES (805, 40, TO_DATE('2025-01-25', 'YYYY-MM-DD'));
 
+INSERT INTO Stock (stock_id, total_in_stock, expiry_date)
+VALUES (806, 80, TO_DATE('2025-01-10', 'YYYY-MM-DD'));
+
+INSERT INTO Stock (stock_id, total_in_stock, expiry_date)
+VALUES (807, 90, TO_DATE('2025-01-8', 'YYYY-MM-DD'));
+COMMIT;
 
 
 --insert into restock table
@@ -163,4 +174,4 @@ VALUES (102, 802, 702, TO_DATE('2024-12-26', 'YYYY-MM-DD'));
 INSERT INTO Restock (employee_id, stock_id, supplier_id, restock_date) 
 VALUES (103, 805, 703, TO_DATE('2024-12-25', 'YYYY-MM-DD'));
 
-COMMIT;
+

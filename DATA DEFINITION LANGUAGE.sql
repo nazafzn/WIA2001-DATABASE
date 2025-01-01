@@ -12,7 +12,7 @@ CREATE TABLE Employee (
     employee_id INT PRIMARY KEY NOT NULL,
     name VARCHAR(50) NOT NULL,
     phone_no VARCHAR(15),
-    email VARCHAR(20),
+    email VARCHAR(30),
     bank_name VARCHAR(50),
     bank_acc_no VARCHAR(20),
     employee_pin VARCHAR(4),
